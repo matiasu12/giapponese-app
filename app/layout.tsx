@@ -1,4 +1,4 @@
-import { DM_Sans, Plus_Jakarta_Sans, JetBrains_Mono, Noto_Sans_JP } from 'next/font/google'
+﻿import { DM_Sans, Plus_Jakarta_Sans, JetBrains_Mono, Noto_Sans_JP } from 'next/font/google'
 import './globals.css'
 import { ThemeProvider } from '@/components/theme-provider'
 import { Toaster } from '@/components/ui/sonner'
@@ -55,3 +55,4 @@ export default function RootLayout({
     </html>
   )
 }
+
