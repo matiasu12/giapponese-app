@@ -2,13 +2,13 @@
   "background_color": "#ffffff",
   "description": "Impara i kanji, hiragana, katakana e la grammatica giapponese",
   "dir": "ltr",
-  "display": "fullscreen",
-  "name": "Giapponese - Impara il Giapponese",
-  "orientation": "portrait-primary",
+  "display": "standalone",
+  "name": "Giapponese con Matiasu",
+  "orientation": "any",
   "scope": "/",
-  "short_name": "JP Impara con Matiasu",
+  "short_name": "Giapponese",
   "start_url": "/",
-  "theme_color": "#ef0000",
+  "theme_color": "#ffffff",
   "icons": [
     {
       "src": "https://giapponese-app-gamma.vercel.app/favicon.svg",
@@ -32,11 +32,5 @@
       "is256x256": false,
       "is192x192": false
     }
-  ],
-  "lang": "en",
-  "categories": [
-    "books &amp; reference",
-    "education",
-    "utilities"
   ]
 }
