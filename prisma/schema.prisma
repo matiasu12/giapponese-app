@@ -1,0 +1,48 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model Kanji {
+  id          Int      @id @default(autoincrement())
+  kanji       String   @unique
+  onyomi      String   @default("")
+  kunyomi     String   @default("")
+  significato String   @default("")
+  radicale    String   @default("")
+  jlpt        String   @default("N5")
+  categoria   String   @default("altro")
+  storiella   String   @default("")
+  esempi      String   @default("")
+  createdAt   DateTime @default(now())
+
+  progress    UserProgress[]
+
+  @@index([jlpt])
+  @@index([categoria])
+}
+
+model UserProgress {
+  id        Int      @id @default(autoincrement())
+  kanjiId   Int
+  imparato  Boolean  @default(false)
+  updatedAt DateTime @updatedAt
+
+  kanji     Kanji    @relation(fields: [kanjiId], references: [id])
+
+  @@unique([kanjiId])
+  @@index([kanjiId])
+}
+
+model QuizResult {
+  id         Int      @id @default(autoincrement())
+  tipo       String
+  corrette   Int      @default(0)
+  errate     Int      @default(0)
+  totale     Int      @default(0)
+  createdAt  DateTime @default(now())
+}
